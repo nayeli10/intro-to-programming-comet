@@ -1,6 +1,7 @@
 
 window.onload = (e)=> {
-    console.log('The page has fully loaded');
+
+    //page set up on load
     let today = new Date();
     let thisYear = today.getFullYear();
 
@@ -21,5 +22,45 @@ window.onload = (e)=> {
         skillsList.append(skill)
     }
 
+
+    //Handling form submit
+    let messageForm = document.querySelector("form[name='leave_message']");
+    messageForm.addEventListener("submit", (e)=>{
+        e.preventDefault();
+
+        //variables hold form values
+        let name = e.target.name.value;
+        let email = e.target.email.value;
+        let message = e.target.message.value;
+
+        //query  page elements
+        let messageSection = document.querySelector("#messages");
+        let messageList = messageSection.querySelector("ul");
+
+        //create new content
+        let newMessage = document.createElement("li");
+        let removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.innerHTML = "remove";
+
+        newMessage.innerHTML = `
+            
+                <a href="mailto:${email}">${name}</a> wrote :
+                <span>${message}</span>
+                `;
+        newMessage.appendChild(removeButton);
+
+        //append
+        messageList.appendChild(newMessage)
+        
+        //add even listener to button
+        removeButton.addEventListener("click", (e)=> {
+            e.preventDefault();
+            let entry = e.target.parentNode;
+            entry.remove()
+        })
+        //reset form
+        messageForm.reset();
+    })
     
 };
