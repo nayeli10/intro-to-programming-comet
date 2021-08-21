@@ -1,0 +1,124 @@
+body {
+    background-color: #fbeae4;
+    color: #383737;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+ }
+  
+ section{
+    padding: 10px 2px;
+ }
+  
+ h1, h2, h3, h4, h5, h6 {
+    color: yellowgreen;
+    font-weight: bolder;
+ }
+  
+ .styled-block {
+    background : rgb(145, 148, 145);
+    float: right;
+    max-width: 50vw;
+    box-shadow: #fbeae4 -10px 8px;
+    padding: 20px;
+ }
+  
+ .styled-block ul{
+    list-style-type: square;
+    margin-left: 55px;
+ }
+  
+ form[name="leave_message"]{
+    background: #696262;
+    max-width: 30vw;
+    box-shadow:rgb(145, 148, 145) -10px 8px;
+    padding: 20px;
+    margin-left: 30px;
+ }
+  
+ form[name="leave_message"] > *{
+   margin: 30px 10px;
+ }
+  
+ form[name="leave_message"] label{
+    color: lightgreen;
+    font-size: 20px;
+    text-transform: uppercase;
+ }
+  
+ form[name="leave_message"] input,
+ form[name="leave_message"] textarea{
+    font-size: 12px;
+    padding: 3px 10px;
+    border: greenyellow solid 5px;
+    border-radius: 10px;
+    margin: 2px 15px;
+}
+  
+button[type="submit"] {
+    background-color: yellowgreen;
+    border: white 3px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 0;
+}
+
+#messages ul, #skills ul{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+#messages li > * {
+    display: block;
+}
+
+#messages li, #skills li {
+    list-style-type: none;
+    background: #696262;
+    max-width: 25vw;
+    box-shadow:rgb(145, 148, 145) -10px 8px;
+    padding: 20px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 20px;
+}
+
+#messages li a{
+    color: yellowgreen;
+}
+
+#messages li button{
+    background-color: lightsalmon;
+    display: block;
+    border: white 3px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 15px;
+}
+  
+
+footer{
+    margin: 0;
+    background-color: black;
+    height: 150px;
+    color: #696262;
+
+}
+
+footer p{
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    top: calc(50% - 20px);
+}
+ 
+ 
+ 
