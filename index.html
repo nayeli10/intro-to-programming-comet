@@ -5,54 +5,66 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
     <body>
-        <section>
-            <h1>About</h1>
-            <ul>
-                <li><p>My name is Nayeli. I'm 26 and am learning code through Code The Dream.</p></li>
-            </ul>
-          
-        </section>
-        <section>
-            <h1>Experience</h1>
-            <ul>
-                <li><p>I've also taken classes through The Last Mile but have been out of the field for almost two years now.</p></li>
-            </ul>
-        </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul></ul>
-        </section>
-        <section>
-            <h1>Connect</h1>
-            <ul>
-                <li><p>email: nayeliflourish@gmail.com</p></li>
-                <li><p>GitHub: <a href="https://github.com/nayeli10">Click here</a> to see my github projects </p></li>
-                <li><p>Social media: <a href="https://www.facebook.com/">Click here</a> to see my facebook page </p></li>
-            </ul>
-        </section>
-        <section>
-            <h2>Leave a Message</h2>
-            <form name="leave_message">
+        <div>
+            <nav id="nav-bar">
+                <ul></ul>
+            </nav>
+        </div>
+        <div id="content">
+            <div>
                 <div>
-                    <label for="name">Name</label>
-                <input type="text" name="name" required="true" >
+                    <img src="assets/head.png" id="headshot" />
                 </div>
-                <div>
-                    <label for="email">email</label>
-                    <input type="email" name="email" required="true" >
-                </div>
-                <div>
-                    <label for="message">message</label>
-                <textarea name="message" required="true"></textarea>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-        <section id="messages">
-            <h2>Messages</h2>
-            <ul>
-            </ul>
-        </section>
+            </div>
+            <section id="about">
+                <h1>About</h1>
+                <ul>
+                    <li><p>My name is Nayeli. I'm 26 and am learning code through Code The Dream.</p></li>
+                </ul>
+            </section>
+            <section id="experience">
+                <h1>Experience</h1>
+                <ul>
+                    <li><p>I've also taken classes through The Last Mile but have been out of the field for almost two years now.</p></li>
+                </ul>
+            </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul></ul>
+            </section>
+            <section id="connect">
+                <h1>Connect</h1>
+                <ul>
+                    <li><p>email: nayeliflourish@gmail.com</p></li>
+                    <li><p>GitHub: <a href="https://github.com/nayeli10">Click here</a> to see my github projects </p></li>
+                    <li><p>Social media: <a href="https://www.facebook.com/">Click here</a> to see my facebook page </p></li>
+                </ul>
+            </section>
+            <section id="message">
+                <h2>Leave a Message</h2>
+                <form name="leave_message">
+                    <div>
+                        <label for="name">Name</label>
+                    <input type="text" name="name" required="true" >
+                    </div>
+                    <div>
+                        <label for="email">email</label>
+                        <input type="email" name="email" required="true" >
+                    </div>
+                    <div>
+                        <label for="message">message</label>
+                    <textarea name="message" required="true"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <section id="messages">
+                <h2>Messages</h2>
+                <ul>
+                </ul>
+            </section>
+        </div>
+        
         <footer></footer>
         <script src="js/index.js"></script>
     </body>

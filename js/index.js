@@ -45,11 +45,13 @@ window.onload = (e)=> {
 
         newMessage.innerHTML = `
             
-                <a href="mailto:${email}">${name}</a> wrote :
-                <span>${message}</span>
+                <p>
+                    <a href="mailto:${email}">${name}</a> \n 
+                    wrote:
+                    <span>${message}<span>
+                </p>
                 `;
         newMessage.appendChild(removeButton);
-
         //append
         messageList.appendChild(newMessage)
         
@@ -61,6 +63,16 @@ window.onload = (e)=> {
         })
         //reset form
         messageForm.reset();
+    })
+
+//CREATES THE NAV BAR
+    const sectionIDs = document.querySelectorAll("section");
+    const navList = document.querySelector("#nav-bar ul");
+
+    sectionIDs.forEach(i=>{
+        let listItem = document.createElement("li");
+        listItem.innerHTML = `<a href='#${i.id}'> ${i.id} </a>`;
+        return navList.appendChild(listItem)
     })
     
 };
