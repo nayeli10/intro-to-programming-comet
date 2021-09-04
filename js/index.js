@@ -67,12 +67,49 @@ window.onload = (e)=> {
 
 //CREATES THE NAV BAR
     const sectionIDs = document.querySelectorAll("section");
-    const navList = document.querySelector("#nav-bar ul");
-
+    const navList = document.querySelector("#nav-list");
+    const navBar = document.querySelector("#nav-bar")
     sectionIDs.forEach(i=>{
         let listItem = document.createElement("li");
         listItem.innerHTML = `<a href='#${i.id}'> ${i.id} </a>`;
         return navList.appendChild(listItem)
     })
+
+
+    const navbar = document.querySelector("#nav-display")
+
+    //display the navbar
+    navbar.addEventListener("click", ()=>{
+        navBar.style.left = "0px" ;
+    })
     
+
+   // External Data Request
+    
+    var githubRequest = new XMLHttpRequest();
+    githubRequest.open("GET", "https://api.github.com/users/nayeli10/repos");
+    githubRequest.send();
+
+
+    githubRequest.addEventListener("load", function () {
+        const data = JSON.parse(this.response);
+        let projectSection = document.querySelector("#projects");
+        let projectList = projectSection.querySelector("ul")
+
+            //iterate through each project return & create list item
+        data.forEach(item => {
+            let project = document.createElement("li");
+            project.innerHTML = `<a href=${item.html_url}> ${item.name} </a> <p> Created on: ${makeDate(item.created_at)}</p>`;
+            projectList.appendChild(project);
+
+        })
+    });
+    
+    let makeDate = (date) =>{
+        var d = new Date(date);
+        return d.toLocaleString();
+    }
 };
+
+
+    
