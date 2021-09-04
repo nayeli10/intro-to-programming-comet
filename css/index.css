@@ -17,6 +17,8 @@ body {
     max-width: 25wv;
     min-width: 100px;
     background: azure;
+    left: -50vw;
+    transition: 2s;
  }
 
  #nav-bar ul{
@@ -30,8 +32,26 @@ body {
     padding: 0;
  }
 
+ #nav-display{
+     position: fixed;
+     margin: 0;
+     padding: 0;
+     z-index: 100;
+     width: 50px;
+ }
+
+ #nav-display img:hover{
+    filter: invert(100%); 
+    width: 60px;
+    transition: 1s;
+    display: block;
+    position: absolute;
+    left: 20px;
+    box-shadow: -10px 5px green;
+}
+
  #nav-bar li{
-    padding: 10px 20px;
+    padding: 10px 100px;
     text-transform: capitalize;
     
  }
@@ -40,6 +60,7 @@ body {
     text-decoration: none;
     color: white;
     font-size: 20px;
+    position:absolute;
  }
 
  #nav-bar li a:hover{
@@ -52,8 +73,8 @@ body {
     transition: 1s;
  }
 
- #content{
-     margin-left: 25vw;
+#content{
+    margin: 0px 100px;
  }
 
  #headshot{
@@ -127,16 +148,28 @@ button[type="submit"] {
     margin: 0;
 }
 
-#messages ul, #skills ul{
+#messages ul, #skills ul, #projects UL{
     display: inline-flex;
     flex-wrap: wrap;
+}
+
+#projects a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+#projects a:hover{
+    text-decoration: underline;
+    color: lightgreen;
+    transition: all .5s;
 }
 
 #messages li > * {
     display: block;
 }
 
-#messages li, #skills li {
+#messages li, #skills li, #projects li {
     list-style-type: none;
     background: #696262;
     max-width: 25vw;
