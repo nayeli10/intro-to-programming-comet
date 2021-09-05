@@ -5,12 +5,11 @@ window.onload = (e)=> {
     let today = new Date();
     let thisYear = today.getFullYear();
 
-    let footer = document.querySelector("footer")
+    let footer = document.querySelector("footer");
     let copyright = document.createElement("p");
     copyright.innerHTML = "Nayeli" + thisYear;
 
-    footer.append(copyright)
-
+    footer.append(copyright);
 
     let skills = ["Javascript","CSS", "MongoDB", "Express","Node", "React", "SQL"];
     let skillsSection = document.querySelector("#skills");
@@ -28,12 +27,12 @@ window.onload = (e)=> {
     messageForm.addEventListener("submit", (e)=>{
         e.preventDefault();
 
-        //variables hold form values
+        //hold form values
         let name = e.target.name.value;
         let email = e.target.email.value;
         let message = e.target.message.value;
 
-        //query  page elements
+        //query page elements
         let messageSection = document.querySelector("#messages");
         let messageList = messageSection.querySelector("ul");
 
@@ -44,15 +43,15 @@ window.onload = (e)=> {
         removeButton.innerHTML = "remove";
 
         newMessage.innerHTML = `
-            
                 <p>
                     <a href="mailto:${email}">${name}</a> \n 
                     wrote:
                     <span>${message}<span>
                 </p>
                 `;
-        newMessage.appendChild(removeButton);
+                
         //append
+        newMessage.appendChild(removeButton);
         messageList.appendChild(newMessage)
         
         //add even listener to button
@@ -85,30 +84,32 @@ window.onload = (e)=> {
     
 
    // External Data Request
+    let gitUrl = "https://api.github.com/users/nayeli10/repos";
+
+    function usesFetch(url){
+        fetch(url)    
+            .then( res => res.json())
+            .then( data => dataHandler(data))
+            .catch( error => console.error('Error:', error) );
+    }
     
-    var githubRequest = new XMLHttpRequest();
-    githubRequest.open("GET", "https://api.github.com/users/nayeli10/repos");
-    githubRequest.send();
-
-
-    githubRequest.addEventListener("load", function () {
-        const data = JSON.parse(this.response);
+    //iterate through each project return & create list item
+    let dataHandler = (arr) =>{
         let projectSection = document.querySelector("#projects");
-        let projectList = projectSection.querySelector("ul")
-
-            //iterate through each project return & create list item
-        data.forEach(item => {
-            let project = document.createElement("li");
-            project.innerHTML = `<a href=${item.html_url}> ${item.name} </a> <p> Created on: ${makeDate(item.created_at)}</p>`;
-            projectList.appendChild(project);
-
-        })
-    });
+                let projectList = projectSection.querySelector("ul");
+                arr.forEach(item => {
+                    let project = document.createElement("li");
+                    project.innerHTML = `<a href=${item.html_url}> ${item.name} </a> <p> Created on: ${makeDate(item.created_at)}</p>`;
+                    projectList.appendChild(project);
+                })
+    }
     
     let makeDate = (date) =>{
         var d = new Date(date);
         return d.toLocaleString();
     }
+
+    usesFetch(gitUrl);
 };
 
 
