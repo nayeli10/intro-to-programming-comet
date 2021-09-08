@@ -3,75 +3,113 @@
     <head>
         <title>Nayeli's HTML Page</title>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shadows+Into+Light&display=swap" rel="stylesheet">
         <script src="js/index.js"></script>
     </head>
     <body>
-        <div>
-            <div id="nav-display"> <img src="assets/chevron.svg" /> </div>
-            <nav id="nav-bar">
+
+        <div class="content-container">
+            <div id="toggle-switch" class="switch-display1"></div>
+            <div id="nav-bar" class="item">
                 <ul id="nav-list"></ul>
-            </nav>
-        </div>
-        <div id="content">
-            <div>
-                <div>
-                    <img src="assets/head.png" id="headshot" />
-                </div>
             </div>
-            <section id="about">
-                <h1>About</h1>
-                <ul>
-                    <li><p>My name is Nayeli. I'm 26 and am learning code through Code The Dream.</p></li>
-                </ul>
-            </section>
-            <section id="experience">
-                <h1>Experience</h1>
-                <ul>
-                    <li><p>I've also taken classes through The Last Mile but have been out of the field for almost two years now.</p></li>
-                </ul>
-            </section>
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul></ul>
-            </section>
-            <section id="projects">
-                <h1>Projects</h1>
-                <ul></ul>
-            </section>
-            <section id="connect">
-                <h1>Connect</h1>
-                <ul>
-                    <li><p>email: nayeliflourish@gmail.com</p></li>
-                    <li><p>GitHub: <a href="https://github.com/nayeli10">Click here</a> to see my github projects </p></li>
-                    <li><p>Social media: <a href="https://www.facebook.com/">Click here</a> to see my facebook page </p></li>
-                </ul>
-            </section>
-            <section id="message">
-                <h2>Leave a Message</h2>
-                <form name="leave_message">
-                    <div>
-                        <label for="name">Name</label>
-                    <input type="text" name="name" required="true" >
-                    </div>
-                    <div>
-                        <label for="email">email</label>
-                        <input type="email" name="email" required="true" >
-                    </div>
-                    <div>
-                        <label for="message">message</label>
-                    <textarea name="message" required="true"></textarea>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </section>
-            <section id="messages">
-                <h2>Messages</h2>
-                <ul>
-                </ul>
-            </section>
+            <main id="content" class="item">
+                <section id="header">
+                    <p>Nayeli Peña Arce</p>
+                </section>
+                <section class="flex-section">
+                    <div id="self" ><img src="assets/head.png" /></div>
+                </section>
+                <section id="about">
+                    <h1>About</h1>
+                    <ul class="flex-section">
+                        <li>
+                            <p>My name is Nayeli. I'm 27 and am learning code through Code The Dream. I dislike CSS but I'm half decent with Javascript.</p>
+                            <p>I love video games but do not want to pursue a career in coding for games.</p>
+                        </li>
+                    </ul>
+                </section>
+                <section id="experience">
+                    <h1>Experience</h1>
+                    <ul class="flex-section"> 
+                        <li> 
+                            <p>February 2017 - August 2017</p>
+                            <p>Track 1 class through The Last Mile which focused on front end developement. </p>
+                        </li>
+                        <li>
+                            <p>December 2017 - May 2018</p>
+                            <p>Track 2 class through The Last Mile which focused on backend developement. </p>
+                        </li>
+                        <li>
+                            <p>June 2019 - September 2020</p>
+                            <p> T.A. for The Last Mile. </p>
+                        </li>
+                        <li>
+                            <p>September 2020 - January 2021</p>
+                            <p>Various Udemy courses on React.</p>
+                        </li>
+                        <li>
+                            <p>June 2021 - September 2021</p>
+                            <p>Comet class through Code the Dream.</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="flex-section break">
+                    <img src="assets/single-plant.webp">
+                </section>
+                <section id="skills">
+                    <h1>Skills</h1>
+                    <ul class="flex-section"></ul>
+                </section>
+
+                <section class="flex-section break">
+                    <img src="assets/leaf-bush.jpeg">
+                </section>
+
+                <section id="projects">
+                    <h1>Projects</h1>
+                    <section class="flex-section break">
+                        <img src="assets/project.webp">
+                    </section>
+                    <ul class="flex-section"></ul>
+                </section>
+               
+                <section id="message">
+                    <h2>Leave a Message</h2>
+                    <form name="leave_message">
+                        <div>
+                            <label for="name">Name</label>
+                        <input type="text" name="name" required="true" >
+                        </div>
+                        <div>
+                            <label for="email">email</label>
+                            <input type="email" name="email" required="true" >
+                        </div>
+                        <div>
+                            <label for="message">message</label>
+                        <textarea name="message" required="true"></textarea>
+                        </div>
+                        <button type="submit" class="button submit-button">Submit</button>
+                    </form>
+                </section>
+                <section id="messages" class="styled-block">
+                    <h2>Messages</h2>
+                    <ul class="flex-section ">
+                    </ul>
+                </section>
+                <footer >
+                    <section id="connect" class="flex-section">
+                        <ul class="flex-section">
+                            <li><a href="mailto:nayeliflourish@gmail.com"><img src="assets/gmail.png"></a></li>
+                            <li><a href="https://github.com/nayeli10"> <img src="assets/github.jpeg"> </a></li>
+                            <li><a href="https://www.instagram.com/chasingfreed0m/"><img src="assets/instagram.jpeg"></a></li>
+                        </ul>
+                    </section>
+                </footer>
+            </main>
         </div>
-        
-        <footer></footer>
-        
     </body>
 </html>
